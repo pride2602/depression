@@ -1,11 +1,20 @@
-#include"file.h"
-#include <filesystem>
+#include "Chat.h"
 
-int main() {
-    setlocale(0, "");
-    File file;
-    file.userFile();
-    std::cout << std::endl;
-    file.messageFile();
-    return 0;
+int main()
+{
+	Chat chat;
+
+	chat.start();
+
+	while (chat.isChatWork()) {
+		
+		chat.showLoginMenu();
+
+		while (chat.getCurrentUser()) {
+			chat.showUserMenu();
+		}
+
+	}
+
+	return 0;
 }
